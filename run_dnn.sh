@@ -1,0 +1,1 @@
+ros2 launch dnn_node_example dnn_node_example.launch.py dnn_example_config_file:=/root/dnn/yolov8.json
