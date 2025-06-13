@@ -39,11 +39,9 @@ class MsgCenter : public rclcpp::Node
                 //这里补逻辑 根据障碍物的高度来判断障碍物的距离 来决定是不是需要避障
                 if(target.type == "obstacles\r" ){ 
                     obstacles->push_back(target);
-                    std::cout << "obstacle height: " << target.rois[0].rect.height << std::endl;
-                    std::cout << "obstacles size: " << obstacles->size() << std::endl;
-                    // if (target.rois[0].rect.height > 360){ //[TODO] 改阈值
-                    // car_state = 4;
-                    // }
+                    if (target.rois[0].rect.height > 300){ //[TODO] 改阈值
+                    car_state = 4;
+                    }
                 }
                 
             }
